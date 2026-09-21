@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[10][10], rows, cols, i, j;
+    int posRow, posCol, value;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    cout << "Enter number of columns: ";
+    cin >> cols;
+
+    cout << "Enter array elements:" << endl;
+    for(i = 0; i < rows; i++)
+    {
+        for(j = 0; j < cols; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    cout << "Enter row position: ";
+    cin >> posRow;
+
+    cout << "Enter column position: ";
+    cin >> posCol;
+
+    cout << "Enter value to insert: ";
+    cin >> value;
+
+    // Shift elements to the right
+    for(j = cols; j > posCol; j--)
+    {
+        arr[posRow][j] = arr[posRow][j - 1];
+    }
+
+    arr[posRow][posCol] = value;
+    cols++;
+
+    cout << "Array after insertion:" << endl;
+
+    for(i = 0; i < rows; i++)
+    {
+        for(j = 0; j < cols; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
