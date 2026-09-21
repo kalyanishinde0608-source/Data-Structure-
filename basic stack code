@@ -1,0 +1,100 @@
+#include <iostream>
+using namespace std;
+
+int stack[100], top = -1, n;
+
+void push()
+{
+    int value;
+
+    if(top == n - 1)
+    {
+        cout << "Stack Overflow" << endl;
+    }
+    else
+    {
+        cout << "Enter value: ";
+        cin >> value;
+
+        top++;
+        stack[top] = value;
+
+        cout << "Element inserted successfully" << endl;
+    }
+}
+
+void pop()
+{
+    if(top == -1)
+    {
+        cout << "Stack Underflow" << endl;
+    }
+    else
+    {
+        cout << "Deleted element: " << stack[top] << endl;
+        top--;
+    }
+}
+
+void display()
+{
+    if(top == -1)
+    {
+        cout << "Stack is empty" << endl;
+    }
+    else
+    {
+        cout << "Stack elements are: ";
+
+        for(int i = top; i >= 0; i--)
+        {
+            cout << stack[i] << " ";
+        }
+
+        cout << endl;
+    }
+}
+
+int main()
+{
+    int choice;
+
+    cout << "Enter size of stack: ";
+    cin >> n;
+
+    do
+    {
+        cout << "\n1. Push";
+        cout << "\n2. Pop";
+        cout << "\n3. Display";
+        cout << "\n4. Exit";
+
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        switch(choice)
+        {
+            case 1:
+                push();
+                break;
+
+            case 2:
+                pop();
+                break;
+
+            case 3:
+                display();
+                break;
+
+            case 4:
+                cout << "Program ended";
+                break;
+
+            default:
+                cout << "Invalid choice";
+        }
+
+    } while(choice != 4);
+
+    return 0;
+}
