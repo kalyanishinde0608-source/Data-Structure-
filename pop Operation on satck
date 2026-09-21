@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int stack[100], n, top = -1, value;
+
+    cout << "Enter size of stack: ";
+    cin >> n;
+
+    cout << "Enter element to push: ";
+    cin >> value;
+
+    if (top == n - 1)
+    {
+        cout << "Stack Overflow";
+    }
+    else
+    {
+        top++;
+        stack[top] = value;
+
+        cout << "Element pushed: " << stack[top];
+    }
+
+    return 0;
+}
