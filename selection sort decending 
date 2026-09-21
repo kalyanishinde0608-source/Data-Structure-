@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[100], n, i, j, maxIndex, temp;
+
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    cout << "Enter array elements: ";
+    for(i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    // Selection Sort in descending order
+    for(i = 0; i < n - 1; i++)
+    {
+        maxIndex = i;
+
+        for(j = i + 1; j < n; j++)
+        {
+            if(arr[j] > arr[maxIndex])
+            {
+                maxIndex = j;
+            }
+        }
+
+        temp = arr[i];
+        arr[i] = arr[maxIndex];
+        arr[maxIndex] = temp;
+    }
+
+    cout << "Array in descending order: ";
+
+    for(i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
