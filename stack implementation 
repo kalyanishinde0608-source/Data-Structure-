@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int stack[100], top = -1;
+
+    if (top == -1)
+    {
+        cout << "Stack is Empty";
+    }
+    else
+    {
+        cout << "Stack is Not Empty";
+    }
+
+    return 0;
+}
